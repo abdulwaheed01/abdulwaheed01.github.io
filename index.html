@@ -10,6 +10,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
 	<link rel="shortcut icon" href="favicon.ico"> 
+	<script src="html2pdf.bundle.min.js"></script>
 	
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
@@ -20,12 +21,24 @@
 	<!-- Theme CSS -->  
 	<link id="theme-style" rel="stylesheet" href="assets/css/devresume.css">
 
+ 	<script>
+      		function generatePDF() {
+        	// Choose the element that our invoice is rendered in.
+        	const element = document.getElementById("invoice");
+       		 // Choose the element and save the PDF for our user.
+       		 html2pdf()
+		
+          	.from(element)
+         	 .save();
+     	 	}
+    	</script>
+
 </head> 
 
 <body>
 	
-	
-	<div class="main-wrapper">
+     
+	<div class="main-wrapper" id="invoice" >
 		<div class="container px-3 px-lg-5">
 			<article class="resume-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
 				
@@ -206,11 +219,18 @@
 												</li>
 
 												<li>
-														<h6>Open Source tools for Data Science</h6>
-														<p>Issued Oct 2019 | No Expiration Date <br>
+													<h6>Open Source tools for Data Science</h6>
+													<p>Issued Oct 2019 | No Expiration Date <br>
 															Issuing Organization: Coursera <br>
 															Credential ID: <a href="https://www.coursera.org/account/accomplishments/verify/GMJ5DZB25RH7" style ="color: rgb(102, 176, 226);" >https://www.coursera.org/account/accomplishments/verify/GMJ5DZB25RH7</a></p>
-													</li>
+												</li>
+
+												<li>
+													<h6>Data Science Methodology</h6>
+													<p>Issued Nov 2019 | No Expiration Date <br>
+															Issuing Organization: Coursera <br>
+															Credential ID: <a href="https://www.coursera.org/account/accomplishments/verify/5M5WJM44JTM4" style ="color: rgb(102, 176, 226);" >https://www.coursera.org/account/accomplishments/verify/5M5WJM44JTM4</a></p>
+												</li>
 											</ul>
 										</div>	
 									</div>
@@ -325,6 +345,10 @@
 				</footer> -->
 				
 			</div><!--//main-wrapper-->
+		
+
+			<button onclick="generatePDF()">Download as PDF</button>
+			
 
 
 
